@@ -2,10 +2,68 @@
 <html>
 	<head>
 		<title></title>
+		<meta charset="utf-8" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
 	</head>
 	<body>
-		<h2>Projekt społeczny</h2>
-		<h1>by Maria Teresa<img src="images/Tereska.jpg" /></h1>
+		<div class="cover"></div>
+		<div class="message-box"></div>
+		<!-- logo & linki -->
+		<div id="buttons-container">
+			<button class="properties">Pokaż właściwości</button>
+			<button class="compare">Porównaj pierwiastek</button>
+			<button class="usage">Pokaż zastosowania</button>
+			<button class="description">Pokaż opis pierwiastka</button>
+		</div>
+		<!-- suwaki -->
+		<div id="elements-table">
+			<p></p>
+			<p class="number">1</p>
+			<p class="number">2</p>
+			<p class="number">3</p>
+			<p class="number">4</p>
+			<p class="number">5</p>
+			<p class="number">6</p>
+			<p class="number">7</p>
+			<p class="number">8</p>
+			<p class="number">9</p>
+			<p class="number">10</p>
+			<p class="number">11</p>
+			<p class="number">12</p>
+			<p class="number">13</p>
+			<p class="number">14</p>
+			<p class="number">15</p>
+			<p class="number">16</p>
+			<p class="number">17</p>
+			<p class="number">18</p>
+			<p class="number" style="grid-area: 2 / 1 / span 1 / span 1;">1</p>
+			<p class="number" style="grid-area: 3 / 1 / span 1 / span 1;">2</p>
+			<p class="number" style="grid-area: 4 / 1 / span 1 / span 1;">3</p>
+			<p class="number" style="grid-area: 5 / 1 / span 1 / span 1;">4</p>
+			<p class="number" style="grid-area: 6 / 1 / span 1 / span 1;">5</p>
+			<p class="number" style="grid-area: 7 / 1 / span 1 / span 1;">6</p>
+			<p class="number" style="grid-area: 8 / 1 / span 1 / span 1;">7</p>
+			<div style="grid-area: 2 / 2 / span 1 / span 1;" title="Wodór">
+				<p>1</p>
+				<p class="element">H</p>
+				<p>Wodór</p>
+				<p>1,008</p>
+			</div>
+			<div style="grid-area: 2 / 19 / span 1 / span 1;" title="Hel">
+				<p>2</p>
+				<p class="element">He</p>
+				<p>Hel</p>
+				<p>4,0026</p>
+			</div>
+			<!-- div style="grid-area: (numer okresu + 1) / (numer grupy + 1) / span 1 / span 1;" title="(nazwa pierwiastka)">
+				<p>(liczba atomowa)</p>
+				<p class="element">(symbol pierwiastka)</p>
+				<p>(nazwa pierwiastka)</p>
+				<p>(masa atomowa)</p>
+			</div -->
+		</div>
+		<!-- wyniki guzików -->
 	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="script.js"></script>
 </html>
