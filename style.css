@@ -1,5 +1,6 @@
 body {
 	margin: 0px;
+	font-family: "slabo 27px";
 }
 
 .cover {
@@ -8,6 +9,7 @@ body {
 	position: fixed;
 	z-index: 2;
 	pointer-events: none;
+	transition: background-color 0.7s;
 }
 
 .message-box {
@@ -20,6 +22,18 @@ body {
 	color: white;
 	text-shadow: 1px 1px 3px black, 1px -1px 3px black, -1px 1px 3px black, -1px -1px 3px black;
 	transform: translateX(-50%);
+}
+
+.logo-container {
+	display: grid;
+	max-width: 500px;
+	margin: 0px;
+	grid-template: auto / auto;
+}
+
+.logo {
+	grid-area: 1 / 1 / span 1 / span 1;
+	transition: opacity 2s;
 }
 
 /* elements table */
@@ -39,8 +53,10 @@ body {
 
 #elements-table div {
 	text-align: center;
-	height: 100%;
 	border: black 1px solid;
+	margin-left: -1px;
+	margin-top: -1px;
+	transition: transform 0.5s, box-shadow 0.5s;
 }
 
 #elements-table div p {
@@ -63,11 +79,12 @@ body {
 
 #buttons-container {
 	display: flex;
-	height: 50px;
+	padding: 15px 0px;
 	justify-content: space-around;
-	align-items: center;
 }
 
-#buttons-container button {
+button {
+	font-size: 1em;
+	font-family: "slabo 27px";
 	height: 2em;
 }
