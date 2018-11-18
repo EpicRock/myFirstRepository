@@ -1,25 +1,29 @@
 <!Doctype html>
 <html>
 	<head>
-		<title></title>
+		<title>Chemia Online</title>
 		<meta charset="utf-8" />
+		<link rel="icon" href="images/icon.png" />
 		<link rel="stylesheet" type="text/css" href="style.css" />
-		<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
-		</head>
-		<body>
-			<div class="cover"></div>
-			<div class="message-box"></div>
-			<div id="top-bar">
-				<div style="max-width: 500px; display: inline-block;">
-					<div class="logo-container">
-						<img src="images/blueLogo.jpg" class="logo" />
-						<img src="images/greenLogo.jpg" class="logo" style="opacity: 0;" />
-					</div>
+		<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="cover"></div>
+		<div class="message-box"></div>
+		<div id="top-bar">
+			<div style="max-width: 500px; display: inline-block;">
+				<div class="logo-container">
+					<img src="images/blueLogo.jpg" class="logo" />
+					<img src="images/greenLogo.jpg" class="logo" style="opacity: 0;" />
 				</div>
+			</div>
+			<div class="top-bar-tools">
 				<button class="changeTable">Przejdź do tablicy rozpuszczalności</button>
 				<button>Ustawienia</button>
 			</div>
-			<!-- logo & linki -->
+		</div>
+		<div id="left">
+			<!-- linki -->
 			<div id="buttons-container">
 				<button class="properties">Pokaż właściwości</button>
 				<button class="compare">Porównaj pierwiastki</button>
@@ -54,24 +58,12 @@
 				<p class="number" style="grid-area: 6 / 1 / span 1 / span 1;">5</p>
 				<p class="number" style="grid-area: 7 / 1 / span 1 / span 1;">6</p>
 				<p class="number" style="grid-area: 8 / 1 / span 1 / span 1;">7</p>
-				<!--div style="grid-area: 2 / 2 / span 1 / span 1;" title="Wodór">
-				<p>1</p>
-				<p class="element">H</p>
-				<p>Wodór</p>
-				<p>1,008</p>
-			</div>
-			<!--div style="grid-area: 2 / 19 / span 1 / span 1;" title="Hel">
-				<p>2</p>
-				<p class="element">He</p>
-				<p>Hel</p>
-				<p>4,0026</p>
-			</div>
-			<div style="grid-area: (numer okresu + 1) / (numer grupy + 1) / span 1 / span 1;" title="(nazwa pierwiastka)">
-				<p>(liczba atomowa)</p>
-				<p class="element">(symbol pierwiastka)</p>
-				<p>(nazwa pierwiastka)</p>
-				<p>(masa atomowa)</p>
-			</div-->
+				<!--div style="grid-area: (numer okresu + 1) / (numer grupy + 1) / span 1 / span 1;" title="(nazwa pierwiastka)">
+					<p>(liczba atomowa)</p>
+					<p class="element">(symbol pierwiastka)</p>
+					<p>(nazwa pierwiastka)</p>
+					<p>(masa atomowa)</p>
+				</div-->
 				<div style="grid-area: 2 / 2 / span 1 / span 1;" title="wodór"> 
 					<p>1</p> 
 					<p class="element">H</p> 
@@ -336,8 +328,14 @@
 					<p>294</p>
 				</div>
 			</div>
+			<div id="under-table">
+			</div>
 			<!-- wyniki guzików -->
-		</body>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="script.js"></script>
-	</html>
+		</div>
+		<div id="right">
+			tutaj będzie tabela rozpuszczalności JEJ!!!
+		</div>
+	</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="script.js"></script>
+</html>
