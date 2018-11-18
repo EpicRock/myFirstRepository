@@ -103,6 +103,7 @@ body {
 }
 
 #left {
+	width: 100%;
 	position: relative;
 	left: 0%;
 	transition: left 2s;
