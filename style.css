@@ -4,6 +4,11 @@ body {
 	overflow-x: hidden;
 }
 
+span {
+	display: inline-block;
+	width: 11px;
+}
+
 .cover {
 	width: 100%;
 	height: 100%;
@@ -13,14 +18,18 @@ body {
 	transition: background-color 0.7s;
 }
 
+.white {
+	color: white;
+	text-shadow: 1px 1px 3px black, 1px -1px 3px black, -1px 1px 3px black, -1px -1px 3px black;
+	
+}
+
 .message-box {
 	position: absolute;
 	z-index: 3;
 	display: none;
 	font-size: 3em;
 	left: 50%;
-	color: white;
-	text-shadow: 1px 1px 3px black, 1px -1px 3px black, -1px 1px 3px black, -1px -1px 3px black;
 	transform: translateX(-50%);
 }
 
@@ -29,15 +38,19 @@ body {
 #top-bar {
 	height: 140px;
 	display: flex;
+	border-bottom: 3px solid #005d67;
 	justify-content: space-between;
+	background-color: #819da0;
+	transition: background 2s, border 2s;
 }
 
 .logo-container {
-	display: grid;
+	display: inline-grid;
 	max-width: 500px;
 	height: 100%;
 	margin: 0px;
 	grid-template: auto / auto;
+	background: linear-gradient(to right, green 0%, blue 100%);
 }
 
 .logo {
@@ -52,22 +65,56 @@ body {
 	align-items: center;
 }
 
-/* elements table */
-
-#elements-table {
-	position: relative;
-	z-index: 3;
-	display: grid;
-	grid-template: auto repeat(7, 1fr) / 35px repeat(18, 1fr);
-	align-items: center;
-	width: 94%;
-	padding-right: 10px;
-	transition: transform 0.7s;
-	background-color: white;
-	margin: auto;
+.top-bar-gradient {
+	display: inline-block;
+	height: 100%;
+	width: 300px;
+	background: linear-gradient(to right, white 0%, transparent 100%);
 }
 
-#elements-table div {
+.changeTable {
+	display: flex;
+	align-items: center;
+	font-size: 1.5em;
+	height: 1.6em;
+	cursor: pointer;
+	user-select: none;
+	padding-right: 20px;
+}
+
+.changeTable img {
+	height: 100%;
+	width: auto;
+}
+
+/* elements table */
+
+#table-container {
+	position: relative;
+	z-index: 3;
+	transition: transform 0.7s;
+}
+
+.elements-container {
+	display: grid;
+	align-items: center;
+	margin: auto;
+	background-color: white;
+}
+
+#elements-table {
+	grid-template: auto repeat(7, 1fr) / 35px repeat(18, 1fr);
+	width: 94%;
+	padding-right: 10px;
+}
+
+#under-table {
+	grid-template: 1fr 1fr / auto repeat(15, 1fr);
+	width: 75%;
+	padding: 20px calc(19% - 30px) 0px 40px;
+}
+
+.elements-container div {
 	text-align: center;
 	border: black 1px solid;
 	margin-left: -1px;
@@ -75,7 +122,7 @@ body {
 	transition: transform 0.5s, box-shadow 0.5s;
 }
 
-#elements-table div p {
+.elements-container div p {
 	margin: 0px;
 	font-size: 0.8em;
 }
