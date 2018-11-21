@@ -83,6 +83,12 @@ function getElement (multipleElements) {
 }
 
 $(document).ready(() => {
+	//this fixes the bug with causes logo-container has no width
+	$(".logo-container").css("width", 10);
+	setTimeout(() => {
+		$(".logo-container").css("width", "");
+	}, 1);
+	
 	$(".properties").click(() => {
 		getElement(false);
 		const wait = setInterval(() => {
