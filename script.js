@@ -1,3 +1,4 @@
+const datalistValues = [0, 50, 100];
 let functionEnd = false;
 let functionReturn;
 let isChangingtable = false;
@@ -7,7 +8,7 @@ function getElement (multipleElements) {
 	$("#table-container").css("transform", "scale(1.03, 1.03)");
 	$(".cover").css("backgroundColor", "rgba(0, 0, 0, 0.25)");
 	$(".cover").css("pointerEvents", "initial");
-	$(".message-box").css("top", $("#under-table").offset().top + $("#under-table").height() + 50 + "px");
+	$(".message-box").css("top", $("#under-table").offset().top + $("#under-table").height() + 75 + "px");
 	$(".message-box").fadeIn(700);
 	if (multipleElements) {
 		$(".message-box").text("Wybierz pierwiastki, a potem naciśnij ten napis");
@@ -83,50 +84,58 @@ function getElement (multipleElements) {
 }
 
 $(document).ready(() => {
-	//this fixes the bug with causes logo-container has no width
+	//this fixes the bug witch causes logo-container has no width
 	$(".logo-container").css("width", 10);
 	setTimeout(() => {
 		$(".logo-container").css("width", "");
 	}, 1);
 	
 	$(".properties").click(() => {
-		getElement(false);
-		const wait = setInterval(() => {
-			if (functionEnd === true) {
-				functionEnd = false;
-				//alert(functionReturn);
-			}
-		}, 100);
+		if (!isChangingtable) {
+			getElement(false);
+			const wait = setInterval(() => {
+				if (functionEnd === true) {
+					functionEnd = false;
+					//alert(functionReturn);
+				}
+			}, 100);
+		}
 	});
 	$(".compare").click(() => {
-		getElement(true);
-		const wait = setInterval(() => {
-			if (functionEnd === true) {
-				functionEnd = false;
-				//alert(functionReturn);
-			}
-		}, 100);
+		if (!isChangingtable) {
+			getElement(true);
+			const wait = setInterval(() => {
+				if (functionEnd === true) {
+					functionEnd = false;
+					//alert(functionReturn);
+				}
+			}, 100);
+		}
 	});
 	$(".usage").click(() => {
-		getElement(false);
-		const wait = setInterval(() => {
-			if (functionEnd === true) {
-				functionEnd = false;
-				//alert(functionReturn);
-			}
-		}, 100);
+		if (!isChangingtable) {
+			getElement(false);
+			const wait = setInterval(() => {
+				if (functionEnd === true) {
+					functionEnd = false;
+					//alert(functionReturn);
+				}
+			}, 100);
+		}
 	});
 	$(".description").click(() => {
-		getElement(false);
-		const wait = setInterval(() => {
-			if (functionEnd === true) {
-				functionEnd = false;
-				//alert(functionReturn);
-			}
-		}, 100);
+		if (!isChangingtable) {
+			getElement(false);
+			const wait = setInterval(() => {
+				if (functionEnd === true) {
+					functionEnd = false;
+					//alert(functionReturn);
+				}
+			}, 100);
+		}
 	});
+	
 	$(".changeTable").click(() => {
-		//block clicking in moveing phase
 		if (!isChangingtable) {
 			isChangingtable = true;
 			let viewingRight;
@@ -168,5 +177,44 @@ $(document).ready(() => {
 				$("#top-bar").css("borderBottom", "3px solid #005d67");
 			}
 		}
+	});
+	
+	$("#range-input").on("input", () => {
+		console.log($("#range-input").val());
+	});
+	$("#range-input").on("mousedown", () => {
+		const input = $("#range-input");
+		console.log(input.val());
+		clearInterval(window.changingValue);
+	});
+	$("body").on("mouseup", () => {
+		const input = $("#range-input");
+		let changeValue = 1000;
+		let differences = [];
+		let obj = {};
+		for (let i = 0; i < datalistValues.length; i++) {
+			differences.push(Math.abs(datalistValues[i] - parseFloat(input.val())));
+		};
+		for (let i = 0; i < differences.length; i++) {
+			if (differences[i] <= changeValue) {
+				changeValue = differences[i];
+				obj.vallue = differences[i];
+				obj.i = i;
+			}
+		};
+		changeValue = datalistValues[obj.i];
+		window.changingValue = setInterval(() => {
+			console.log(input.val());
+			if (input.val() > changeValue) {
+				input.val(input.val() - 0.2);
+			}
+			if (input.val() < changeValue) {
+				input.val(parseFloat(input.val()) + 0.2);
+			}
+			if (Math.floor(input.val()) == changeValue) {
+				input.val(changeValue);
+				clearInterval(window.changingValue);
+			}
+		}, 1);
 	});
 });

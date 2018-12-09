@@ -50,7 +50,6 @@ span {
 	height: 100%;
 	margin: 0px;
 	grid-template: auto / auto;
-	background: linear-gradient(to right, green 0%, blue 100%);
 }
 
 .logo {
@@ -87,7 +86,21 @@ span {
 	width: auto;
 }
 
+/* range input */
+
+#range-input {
+	width: 85%;
+	margin: 0px 7.5%;
+}
+
 /* elements table */
+
+#left {
+	width: 100%;
+	position: relative;
+	left: 0%;
+	transition: left 2s;
+}
 
 #table-container {
 	position: relative;
@@ -103,7 +116,7 @@ span {
 }
 
 #elements-table {
-	grid-template: auto repeat(7, 1fr) / 35px repeat(18, 1fr);
+	grid-template: auto repeat(7, 1fr) / /*35px*/auto repeat(18, 1fr);
 	width: 94%;
 	padding-right: 10px;
 }
@@ -111,7 +124,7 @@ span {
 #under-table {
 	grid-template: 1fr 1fr / auto repeat(15, 1fr);
 	width: 75%;
-	padding: 20px calc(19% - 30px) 0px 40px;
+	padding: 35px calc(19% - 30px) 20px 40px;
 }
 
 .elements-container div {
@@ -131,6 +144,7 @@ span {
 	color: grey;
 	margin: 0px;
 	text-align: center;
+	padding: 0px 14px;
 }
 
 .element {
@@ -138,30 +152,37 @@ span {
 	font-size: 1.3em !important;
 }
 
-/* sulubity table */
+/* sulubility table */
 
 #right {
 	width: 100%;
 	height: 100px;
 	position: absolute;
 	left: 100%;
-	top: 150px;
+	top: 143px;
 	transition: left 2s;
 }
 
-#left {
-	width: 100%;
-	position: relative;
-	left: 0%;
-	transition: left 2s;
+.sulubility-table {
+	display: grid;
+	grid-template: repeat(12, 1fr) / repeat(14, 1fr);
+	align-items: center;
+	width: 94%;
+	margin: auto;
+}
+
+.sulubility-table p {
+	margin: 0px;
+	text-align: center;
 }
 
 /* buttons */
 
 #buttons-container {
+	width: 85%;
 	display: flex;
-	padding: 15px 0px;
-	justify-content: space-around;
+	margin: 15px auto;
+	justify-content: space-between;
 }
 
 button {
